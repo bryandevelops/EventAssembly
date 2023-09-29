@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import AuthPage from '../AuthPage/AuthPage';
 import NewOrderPage from '../NewOrderPage/NewOrderPage';
 import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
-import NavBar from '../../components/NavBar/NavBar';
+import Header from '../../components/Header/Header';
 import { getUser } from '../../utilities/users-service';
 import './App.css';
 
@@ -14,7 +14,7 @@ export default function App() {
     <main className='App'>
       {user ? (
         <>
-          <NavBar user={user} setUser={setUser} />
+          <Header user={user} setUser={setUser} />
           <Routes>
             <Route path='/orders' element={<OrderHistoryPage />} />
             <Route path='/orders/new' element={<NewOrderPage />} />
