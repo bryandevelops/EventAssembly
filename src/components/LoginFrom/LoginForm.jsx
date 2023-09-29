@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import * as usersService from '../../utilities/users-service';
+import * as usersService from '../../utilities/users-service.js';
+import styles from './LoginForm.module.css'
 
-export default function LoginForm({ setUser }) {
+export default function LoginForm({ setUser, setButtonClicked }) {
   const [error, setError] = useState('');
   const [credentials, setCredentials] = useState({
     email: '',
@@ -17,7 +18,6 @@ export default function LoginForm({ setUser }) {
     // Prevent form from being submitted to the server
     evt.preventDefault();
     try {
-      // The promise returned by the signUp service method will resolve to the user object included in the payload of the JSON Web Token (JWT)
       const user = await usersService.login(credentials);
       setUser(user);
     } catch(error) {
@@ -27,17 +27,22 @@ export default function LoginForm({ setUser }) {
   }
 
   return (
-    <div>
-      <div className="form-container">
-        <form autoComplete="off" onSubmit={handleSubmit}>
-          <label htmlFor="login-emai">Email</label>
-          <input type="text" id="login-email" name="email" value={credentials.email} onChange={handleChange} required />
-          <label htmlFor="login-password">Password</label>
-          <input type="password" id="login-password" name="password" value={credentials.password} onChange={handleChange} required />
-          <button type="submit">LOG IN</button>
-        </form>
+    <div className={styles.loginFormComponent}>
+      <div className={styles.imgContainer}>
+        <img src="/signin-img.png" alt="" />
       </div>
-      <p className="error-message">&nbsp;{error}</p>
+      <div className={styles.formContainer}>
+        <h1 className={styles.formHeading}>Welcome Back</h1>
+        <form autoComplete="off" className={styles.loginForm} onSubmit={handleSubmit}>
+          <label htmlFor="login-emai">Email</label><br/>
+          <input type="email" id="login-email" name="email" value={credentials.email} onChange={handleChange} required /><br/>
+          <label htmlFor="login-password">Password</label><br/>
+          <input type="password" id="login-password" name="password" value={credentials.password} onChange={handleChange} required /><br/>
+          <button type="submit" className={styles.btn}>Sign In</button>
+        </form>
+        <p className={styles.errorMessage}>&nbsp;{error}</p>
+        <p className="message">Not a member yet? <span className='modal-span' onClick={() => setButtonClicked('Sign Up')}>Sign Up</span></p>
+      </div>
     </div>
   );
 }
