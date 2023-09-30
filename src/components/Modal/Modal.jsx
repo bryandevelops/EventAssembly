@@ -1,5 +1,5 @@
 import SignUpForm from "../SignUpForm/SignUpForm.jsx";
-import LoginForm from "../LoginFrom/LoginForm.jsx";
+import LoginForm from "../LoginForm/LoginForm.jsx";
 import './Modal.css'
 
 export default function SignUpModal({ setUser, showModal, setShowModal, buttonClicked, setButtonClicked }) {
