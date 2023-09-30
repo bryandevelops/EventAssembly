@@ -1,6 +1,6 @@
 import React from "react";
 import * as usersService from '../../utilities/users-service.js';
-import styles from './SignUpForm.module.css'
+import styles from './SignUpForm.module.css';
 
 export default class SignUpForm extends React.Component {
   state = {
@@ -27,6 +27,8 @@ export default class SignUpForm extends React.Component {
 
       const user = await usersService.signUp(formData);
       this.props.setUser(user)
+      this.props.setShowModal(!this.props.showModal)
+      this.props.setButtonClicked(null)
     } catch(error) {
       console.log(error.message)
       this.setState({ error: 'Sign Up Failed - Try Again' })

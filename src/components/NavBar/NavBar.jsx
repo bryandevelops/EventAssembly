@@ -22,8 +22,8 @@ export default function NavBar({ user, setUser }) {
           <>
             <button className={`${styles.btn} ${styles.signUpBtn}`} onClick={() => { setShowSignUpModal(!showSignUpModal); setButtonClicked('Sign Up') }}>Sign Up</button>
             <button className={styles.btn} onClick={() => { setShowSignInModal(!showSignInModal); setButtonClicked('Sign In') }}>Sign In</button>
-            {showSignUpModal ? <Modal showModal={showSignUpModal} setShowModal={setShowSignUpModal} buttonClicked={buttonClicked} setButtonClicked={setButtonClicked} /> : ''}
-            {showSignInModal ? <Modal showModal={showSignInModal} setShowModal={setShowSignInModal} buttonClicked={buttonClicked} setButtonClicked={setButtonClicked} /> : ''}
+            {showSignUpModal ? <Modal setUser={setUser} showModal={showSignUpModal} setShowModal={setShowSignUpModal} buttonClicked={buttonClicked} setButtonClicked={setButtonClicked} /> : ''}
+            {showSignInModal ? <Modal setUser={setUser} showModal={showSignInModal} setShowModal={setShowSignInModal} buttonClicked={buttonClicked} setButtonClicked={setButtonClicked} /> : ''}
           </>
         )
       }

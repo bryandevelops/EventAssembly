@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import * as usersService from '../../utilities/users-service.js';
-import styles from './LoginForm.module.css'
+import styles from './LoginForm.module.css';
 
-export default function LoginForm({ setUser, setButtonClicked }) {
+export default function LoginForm({ setUser, showModal, setShowModal, setButtonClicked }) {
   const [error, setError] = useState('');
   const [credentials, setCredentials] = useState({
     email: '',
@@ -10,16 +10,18 @@ export default function LoginForm({ setUser, setButtonClicked }) {
   });
 
   function handleChange(evt) {
-    setCredentials({ ...credentials, [evt.target.name]: evt.target.value });
-    setError('');
+    setCredentials({ ...credentials, [evt.target.name]: evt.target.value })
+    setError('')
   }
 
   async function handleSubmit(evt) {
     // Prevent form from being submitted to the server
-    evt.preventDefault();
+    evt.preventDefault()
     try {
       const user = await usersService.login(credentials);
-      setUser(user);
+      setUser(user)
+      setShowModal(!showModal)
+      setButtonClicked(null)
     } catch(error) {
       console.log(error.message)
       setError('Log In Failed - Try Again');
