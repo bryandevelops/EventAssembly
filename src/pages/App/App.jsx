@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import LandingPage from '../LandingPage/LandingPage.jsx';
 import NewOrderPage from '../NewOrderPage/NewOrderPage';
 import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 import Header from '../../components/Header/Header';
+import LandingPage from '../LandingPage/LandingPage.jsx';
+import Footer from '../../components/Footer/Footer.jsx';
 import { getUser } from '../../utilities/users-service';
 import './App.css';
 
@@ -25,6 +26,7 @@ export default function App() {
         <>
           <Header user={user} setUser={setUser} />
           <LandingPage setUser={setUser} />
+          <Footer />
         </>
       )}
     </div>

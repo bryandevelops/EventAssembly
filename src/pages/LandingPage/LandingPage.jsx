@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import * as eventsService from '../../utilities/events-service.js'
 import CallToAction from '../../components/CallToAction/CallToAction.jsx';
-import EventListItem from '../../components/PastEventListItem/PastEventListItem.jsx';
+import PastEventListItem from '../../components/PastEventListItem/PastEventListItem.jsx';
 import styles from './LandingPage.module.css';
 
 export default function LandingPage({ setUser }) {
@@ -34,7 +34,7 @@ export default function LandingPage({ setUser }) {
           {
             events.map(event => {
               return (
-                <EventListItem key={event._id} setUser={setUser} {...event} />
+                <PastEventListItem key={event._id} setUser={setUser} {...event} />
               );
             })
           }
