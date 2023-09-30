@@ -20,7 +20,7 @@
   border-bottom-left-radius: 5px;
 }
 
-.imgContaine > img {
+.imgContainer > img {
   width: 90%;
   height: fit-content;
 }

@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { logOut } from '../../utilities/users-service.js';
+import { useNavigate } from 'react-router-dom';
+import * as usersService from '../../utilities/users-service.js';
 import Modal from '../Modal/Modal.jsx';
 import styles from './NavBar.module.css';
 
@@ -7,10 +8,12 @@ export default function NavBar({ user, setUser }) {
   const [showSignUpModal, setShowSignUpModal] = useState(false)
   const [showSignInModal, setShowSignInModal] = useState(false)
   const [buttonClicked , setButtonClicked] = useState(null)
+  const navigate = useNavigate();
 
   function handleLogOut() {
-    logOut()
+    usersService.logOut()
     setUser(null)
+    navigate('/')
   }
 
   return (

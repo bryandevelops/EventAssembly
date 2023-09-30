@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import AuthPage from '../AuthPage/AuthPage';
+import LandingPage from '../LandingPage/LandingPage.jsx';
 import NewOrderPage from '../NewOrderPage/NewOrderPage';
 import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 import Header from '../../components/Header/Header';
@@ -11,7 +11,7 @@ export default function App() {
   const [user, setUser] = useState(getUser());
   
   return (
-    <main className='App'>
+    <div className='App'>
       {user ? (
         <>
           <Header user={user} setUser={setUser} />
@@ -22,8 +22,11 @@ export default function App() {
           </Routes>
         </>
       ) : (
-        <AuthPage setUser={setUser} />
+        <>
+          <Header user={user} setUser={setUser} />
+          <LandingPage setUser={setUser} />
+        </>
       )}
-    </main>
+    </div>
   );
 }
