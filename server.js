@@ -20,6 +20,7 @@ import { checkToken } from './config/checkToken.js';
 
 // Import Routers
 import usersRouter from './routes/api/users.js';
+import eventsRouter from './routes/api/events.js';
 
 // Allows us to be able to use a .env file to access environment variables using the process.env object
 dotenv.config();
@@ -45,6 +46,7 @@ app.use(checkToken)
 
 // Routers
 app.use('/api/users', usersRouter)
+app.use('/api/events', eventsRouter)
 
 // The following "catch all" route is necessary to return the prouction index.html on all non-AJAX requests
 app.get('/*', (req, res) => {

@@ -1,7 +1,8 @@
-.splashSection {
+.callToActionSection {
   display: flex;
   align-items: center;
   background-color: aliceblue;
+  min-height: 600px;
 }
 
 .textContainer {

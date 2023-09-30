@@ -7,14 +7,14 @@ export default function CallToAction({ setUser }) {
   const [buttonClicked , setButtonClicked] = useState(null)
 
   return (
-    <section className={styles.splashSection}>
+    <section className={styles.callToActionSection}>
       <div className={styles.textContainer}>
         <small>ASSEMBLE TOGETHER</small>
         <h1>Get your ideas off the ground</h1>
         <p>
           Find other like-minded individuals with your same interests and assemble together to do something special.
-          Join today to be able to connect with others, either by hosting your own events for people to attend or by creating an RSVP to attend someone else's.
-          What starts off as an event has the opportunity to blossom into a community, and perhaps even something more...
+          Join today to be able to connect with others, either by hosting your own events for people to attend or by sending out an RSVP to attend someone else's.
+          What starts off as an event gathering has the opportunity to blossom into a community, and perhaps even something more...
         </p>
         <button onClick={() => { setShowSignUpModal(!showSignUpModal); setButtonClicked('Sign Up') }}>Join The Assembly</button>
         {showSignUpModal ? <Modal setUser={setUser} showModal={showSignUpModal} setShowModal={setShowSignUpModal} buttonClicked={buttonClicked} setButtonClicked={setButtonClicked} /> : ''}
