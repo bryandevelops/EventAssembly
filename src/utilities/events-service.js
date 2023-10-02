@@ -6,8 +6,8 @@ export async function getPastEvents(numOfEvents) {
   return pastEvents;
 }
 
-export async function getUpcomingEvents(numOfEvents) {
-  const upcomingEvents = await eventsAPI.getUpcomingEvents(numOfEvents);
+export async function getUpcomingEvents(userID, numOfEvents) {
+  const upcomingEvents = await eventsAPI.getUpcomingEvents(userID, numOfEvents);
   console.log('IN EVENTS SERVICE (getUpcomingEvents):', upcomingEvents)
   return upcomingEvents;
 }

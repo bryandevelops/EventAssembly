@@ -7,7 +7,7 @@ export default function DashboardPage({ user }) {
     <main className={styles.dashboardPage}>
       <h1 className={styles.userName}>Welcome, {user.name.split(' ')[0]} 👋</h1>
       <NextEvents user={user} />
-      <UpcomingEvents />
+      <UpcomingEvents user={user} />
     </main>
   );
 }

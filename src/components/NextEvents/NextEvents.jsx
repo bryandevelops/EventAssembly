@@ -39,18 +39,24 @@ export default function NextEvents({ user }) {
           <h3>Your next events</h3>
           <Link to=''>View all</Link>
         </div>
-        <p>
-          Here is a preview of upcoming events that you're hosting and/or attending
+        <p className={styles.userEventsMessage}>
+          Here is a preview of upcoming events that you're hosting and/or attending.
         </p>
-        <ul className={styles.userEventsUl}>
-          {
-            userNextEvents.map(event => {
-              return (
-                <NextEventsListItem key={event._id} {...event} />
-              );
-            })
-          }
-        </ul>
+        {
+          userNextEvents.length !== 0 ? (
+            <ul className={styles.userEventsUl}>
+              {
+                userNextEvents.map(event => {
+                  return (
+                    <NextEventsListItem key={event._id} {...event} />
+                  );
+                })
+              }
+            </ul>
+          ) : (
+            <p className={styles.noUserEventsMessage}>You have not created or registered for any events</p>
+          )
+        }
       </div>
     </aside>
   );

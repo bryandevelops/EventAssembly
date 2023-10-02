@@ -3,14 +3,14 @@ import * as eventsService from '../../utilities/events-service.js';
 import UpcomingEventsListItem from '../UpcomingEventsListItem/UpcomingEventsListItem.jsx';
 import styles from './UpcomingEvents.module.css';
 
-export default function UpcomingEvents(props) {
+export default function UpcomingEvents({ user }) {
   const [upcomingEvents, setUpcomingEvents] = useState([]);
   let currentDate;
 
   useEffect(() => {
-    async function getUpcomingEvents(numOfEvents = 0) {
+    async function getUpcomingEvents(userID, numOfEvents = 0) {
       try {
-        const upcomingEvents = await eventsService.getUpcomingEvents(numOfEvents);
+        const upcomingEvents = await eventsService.getUpcomingEvents(userID, numOfEvents);
         console.log('IN DASHBOARD PAGE (getUpcomingEvents):', upcomingEvents)
         setUpcomingEvents(upcomingEvents)
         
@@ -19,12 +19,15 @@ export default function UpcomingEvents(props) {
         console.log(error.message)
       }
     }
-    getUpcomingEvents(0)
+    getUpcomingEvents(user._id, 0)
   }, [])
 
   return (
     <section className={styles.upcomingEventsComponent}>
       <h1>Upcoming events</h1>
+      <p>
+        Here is the list of upcoming events you can still RSVP for.
+      </p>
       <ul className={styles.upcomingEventsUl}>
         {
           upcomingEvents.map((event, idx) => {

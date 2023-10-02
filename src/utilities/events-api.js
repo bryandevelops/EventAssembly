@@ -4,8 +4,8 @@ export async function getPastEvents(numOfEvents) {
   return res.json();
 }
 
-export async function getUpcomingEvents(numOfEvents) {
-  const res = await fetch(`/api/events/upcoming/${numOfEvents}`);
+export async function getUpcomingEvents(userID, numOfEvents) {
+  const res = await fetch(`/api/events/upcoming/${userID}/${numOfEvents}`);
   console.log('IN EVENTS API (getUpcomingEvents):', res)
   return res.json();
 }
