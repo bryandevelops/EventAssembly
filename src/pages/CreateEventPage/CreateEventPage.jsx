@@ -52,8 +52,7 @@ export default function CreateEventPage({ user }) {
         <input type="datetime-local" name="date" id="date" className={styles.dateInput} onChange={handleChange} required /><br />
         <label htmlFor="description">Description</label><br />
         <p>Tell everyone what this event is about. Share as much or as little as you want.</p>
-        <textarea name="description" id="description" cols="50" rows="5" className={styles.descriptionInput} onChange={handleChange}></textarea><br />
-        {/* <input type="submit" value="Create" className={styles.submitInput} /> */}
+        <textarea name="description" id="description" cols="50" rows="5" placeholder="Give a description" className={styles.descriptionInput} onChange={handleChange}></textarea><br />
         <button type="submit" className={styles.submitInput}>Create</button>
       </form>
     </main>

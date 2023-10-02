@@ -24,7 +24,7 @@ export default function LandingPage({ setUser }) {
     <main>
       <CallToAction setUser={setUser} />
       <section className={styles.landingEventsSection}>
-        <h1>Past Events</h1>
+        <h1>Past events</h1>
         <p>
           Get a sense of what to expect when you join!
           There are plenty of different events assembled by a variety of people.

@@ -10,7 +10,7 @@ export default function UpcomingEventsListItem({ title, date, location, descript
       <h4>{eventDate.toDateString()}&nbsp;&bull;&nbsp;{eventTime}</h4>
       <h1>{title}</h1>
       <h5>{location}&nbsp;&bull;&nbsp;{attendees.length} attendee{attendees.length === 1 ? '' : 's'}</h5>
-      <p>{description}</p>
+      {description ? <p>{description}</p> : <p>No description.</p>}
     </li>
   );
 }
