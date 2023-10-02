@@ -21,3 +21,13 @@ export async function getAttendingEvents(userID, numOfEvents) {
   console.log('IN EVENTS API (getAttendingEvents):', res)
   return res.json();
 }
+
+export async function createEvent(formData) {
+  const res = await fetch('/api/events/new', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(formData)
+  });
+  console.log('IN EVENTS API (createEvent):', res)
+  return res.json();
+}

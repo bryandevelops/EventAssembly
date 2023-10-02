@@ -67,3 +67,16 @@ export async function getAttendingEvents(req, res) {
     return res.status(400).json({ message: error.message });
   }
 }
+
+// Create a new Event document
+export async function createEvent(req, res) {
+  try {
+    await Event.create(req.body)
+    .then(createdEvent => {
+      return res.status(201).json({ message: 'Event Created'})
+    })
+  } catch(error) {
+    console.log(error.message)
+    res.status(400).json({ message: error.message })
+  }
+}

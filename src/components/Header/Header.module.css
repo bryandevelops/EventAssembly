@@ -8,7 +8,10 @@
   position: sticky;
 }
 
-
+.headerContainer {
+  display: flex;
+  align-items: center;
+}
 
 .headerTitle {
   margin-left: 20px;
@@ -20,4 +23,26 @@
   font-size: x-large;
   letter-spacing: 1px;
   cursor: pointer;
+}
+
+.linksContainer {
+  color: white;
+  /* margin-left: 10px; */
+}
+
+.headerLinks {
+  color: white;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: large;
+  margin: 0 5px;
+}
+
+.headerLinks:hover {
+  text-decoration: underline;
+}
+
+.selectedLink {
+  text-decoration: underline;
 }

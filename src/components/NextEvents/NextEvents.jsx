@@ -29,7 +29,7 @@ export default function NextEvents({ user }) {
         console.log(error.message)
       }
     }
-    getUserNextEvents(user._id, 5)
+    getUserNextEvents(user._id, 4)
   }, [])
 
   return (

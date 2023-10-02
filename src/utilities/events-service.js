@@ -23,3 +23,9 @@ export async function getAttendingEvents(userID, numOfEvents) {
   console.log('IN EVENTS SERVICE (getAttendingEvents):', hostingEvents)
   return hostingEvents;
 }
+
+export async function createEvent(formData) {
+  const createdEvent = await eventsAPI.createEvent(formData);
+  console.log('IN EVENTS SERVICE (createEvent):', createdEvent)
+  return createdEvent;
+}
