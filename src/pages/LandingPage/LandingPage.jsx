@@ -5,19 +5,19 @@ import PastEventListItem from '../../components/PastEventListItem/PastEventListI
 import styles from './LandingPage.module.css';
 
 export default function LandingPage({ setUser }) {
-  const [events, setEvents] = useState([])
+  const [pastEvents, setPastEvents] = useState([])
 
   useEffect(() => {
-    async function getFivePastEvents() {
+    async function getPastEvents(numOfEvents = 0) {
       try {
-        const events = await eventsService.getFivePastEvents()
-        console.log('IN LANDING PAGE:', events)
-        setEvents(events)
+        const events = await eventsService.getPastEvents(numOfEvents)
+        console.log('IN LANDING PAGE (getPastEvents):', events)
+        setPastEvents(events)
       } catch(error) {
         console.log(error.message)
       }
     }
-    getFivePastEvents()
+    getPastEvents(5)
   }, [])
 
   return (
@@ -32,7 +32,7 @@ export default function LandingPage({ setUser }) {
         </p>
         <ul className={styles.landingUl}>
           {
-            events.map(event => {
+            pastEvents.map(event => {
               return (
                 <PastEventListItem key={event._id} setUser={setUser} {...event} />
               );

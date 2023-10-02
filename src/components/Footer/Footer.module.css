@@ -45,6 +45,6 @@
   margin-bottom: 5px
 }
 
-a:hover {
-  color: white !important;
+a:not([class]):hover {
+  color: white;
 }

@@ -8,7 +8,9 @@
   position: sticky;
 }
 
-.headerComponent > h1 {
+
+
+.headerTitle {
   margin-left: 20px;
   color: white;
   font-family: 'DM Serif Display', serif;
@@ -17,4 +19,5 @@
   padding: 10px 20px;
   font-size: x-large;
   letter-spacing: 1px;
+  cursor: pointer;
 }

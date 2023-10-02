@@ -1,0 +1,9 @@
+.dashboardPage {
+  background-color: aliceblue;
+}
+
+.userName {
+  margin-left: 50px;
+  padding-top: 25px;
+  font-family: "DM Serif Display", serif;
+}
