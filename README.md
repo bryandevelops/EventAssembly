@@ -2,30 +2,30 @@
 
 Event Assembly is an intuitive event management application designed to simplify event planning and organization. With Event Assembly, users can effortlessly create, manage, and RSVP to events, providing a centralized platform to coordinate gatherings, meetings, parties, and more.
 
-* Project planning on Trello: https://trello.com/b/0NGPq16P/event-assembly-mern-app
-* Code repository on GitHub: https://github.com/bryandevelops/EventAssembly
+* Project planning on [Trello](https://trello.com/b/0NGPq16P/event-assembly-mern-app)
+* Code repository on [GitHub](https://github.com/bryandevelops/EventAssembly)
 
 [Click here to visit the application!](https://event-assembly.onrender.com)
 
-![Landing](https://github.com/bryandevelops/EventAssembly/src/assets/projectImages/event-assembly-landing.png)
+![Landing](https://github.com/bryandevelops/EventAssembly/blob/main/src/assets/projectImages/event-assembly-landing.png)
 
 ## Features
 
 * **Event Creation:** Easily create events by specifying event details such as title, date, time, location, and description.
 
-![Create](https://github.com/bryandevelops/EventAssembly/src/assets/projectImages/event-assembly-create.png)
+![Create](https://github.com/bryandevelops/EventAssembly/blob/main/src/assets/projectImages/event-assembly-create.png)
 
 * **Event Management:** View, edit, and delete events based on your needs and preferences.
 
-![Events](https://github.com/bryandevelops/EventAssembly/src/assets/projectImages/event-assembly-events.png)
+![Events](https://github.com/bryandevelops/EventAssembly/blob/main/src/assets/projectImages/event-assembly-events.png)
  
 * **RSVP Functionality:** RSVP for events you wish to attend, allowing event hosts to anticipate the number of attendees.
 
-![Dashboard](https://github.com/bryandevelops/EventAssembly/src/assets/projectImages/event-assembly-dashboard.png)
+![Dashboard](https://github.com/bryandevelops/EventAssembly/blob/main/src/assets/projectImages/event-assembly-dashboard.png)
 
 * **User Authentication:** Secure user authentication system for a personalized experience and event management tied to individual accounts.
 
-![UserAuth](https://github.com/bryandevelops/EventAssembly/src/assets/projectImages/event-assembly-user-auth.png)
+![UserAuth](https://github.com/bryandevelops/EventAssembly/blob/main/src/assets/projectImages/event-assembly-user-auth.png)
 
 ## Technologies
 
