@@ -7,7 +7,7 @@ Event Assembly is an intuitive event management application designed to simplify
 
 [Click here to visit the application!](https://event-assembly.onrender.com)
 
-![Landing](https://github.com/bryandevelops/EventAssembly/blob/main/src/assets/projectImages/event-assembly-landing.png)
+![Landing](https://github.com/bryandevelops/EventAssembly/blob/main/src/assets/projectImages/event-assembly.png)
 
 ## Features
 
