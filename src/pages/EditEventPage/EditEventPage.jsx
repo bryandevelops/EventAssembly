@@ -33,7 +33,6 @@ export default function EditEventPage(props) {
     e.preventDefault();
     try {
       const editedEvent = await eventsService.editEvent(eventID, formData)
-      console.log('EVENT EDITED', editedEvent)
       navigate(`/events/${eventID}`)
     } catch(error) {
       console.log(error.message)
@@ -43,7 +42,6 @@ export default function EditEventPage(props) {
   async function handleDelete() {
     try {
       const deletedEvent = await eventsService.deleteEvent(eventID);
-      console.log('IN EDIT EVENT PAGE (deleteEvent):', deletedEvent)
     } catch(error) {
       console.log(error.message)
     }

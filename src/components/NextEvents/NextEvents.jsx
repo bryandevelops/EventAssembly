@@ -23,7 +23,6 @@ export default function NextEvents({ user, makeRsvp }) {
         const hostingEvents = await eventsService.getHostingEvents(userID, numOfEvents);
         const attendingEvents = await eventsService.getAttendingEvents(userID, numOfEvents);
         const nextEvents = [...hostingEvents, ...attendingEvents].slice(0, 8).sort(sortAscending);
-        console.log('IN DASHBOARD PAGE (getHosting, getAttending):', nextEvents)
         setUserNextEvents(nextEvents)
       } catch(error) {
         console.log(error.message)

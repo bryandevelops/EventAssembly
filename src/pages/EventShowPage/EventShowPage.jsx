@@ -14,7 +14,6 @@ export default function EventShowPage({ user }) {
     async function getEvent(eventID) {
       try {
         const event = await eventsService.getEvent(eventID);
-        console.log('IN EVENT SHOW PAGE (getEvent):', event)
         setEvent(event)
       } catch(error) {
         console.log(error.message)
@@ -41,7 +40,6 @@ export default function EventShowPage({ user }) {
   async function handleDelete() {
     try {
       const deletedEvent = await eventsService.deleteEvent(eventID);
-      console.log('IN EVENT SHOW PAGE (deleteEvent):', deletedEvent)
     } catch(error) {
       console.log(error.message)
     }
@@ -50,7 +48,6 @@ export default function EventShowPage({ user }) {
   async function handleRSVP() {
     try {
       const rsvpEvent = await eventsService.rsvpEvent(eventID, { user })
-      console.log('IN EVENT SHOW PAGE (rsvpEvent):', rsvpEvent)
       setEvent(rsvpEvent)
     } catch(error) {
       console.log(error.message)
@@ -60,7 +57,6 @@ export default function EventShowPage({ user }) {
   async function handleCancelRSVP() {
     try {
       const cancelRsvpEvent = await eventsService.cancelRsvpEvent(eventID, { user })
-      console.log('IN EVENT SHOW PAGE (cancelRsvpEvent):', cancelRsvpEvent)
       setEvent(cancelRsvpEvent)
     } catch(error) {
       console.log(error.message)

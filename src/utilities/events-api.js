@@ -1,30 +1,25 @@
 export async function getPastEvents(numOfEvents) {
   const res = await fetch(`/api/events/past/${numOfEvents}`);
-  console.log('IN EVENTS API (getPastEvents):', res)
   return res.json();
 }
 
 export async function getUpcomingEvents(userID, numOfEvents) {
   const res = await fetch(`/api/events/upcoming/${userID}/${numOfEvents}`);
-  console.log('IN EVENTS API (getUpcomingEvents):', res)
   return res.json();
 }
 
 export async function getHostingEvents(userID, numOfEvents) {
   const res = await fetch(`/api/events/hosting/${userID}/${numOfEvents}`);
-  console.log('IN EVENTS API (getHostingEvents):', res)
   return res.json();
 }
 
 export async function getAttendingEvents(userID, numOfEvents) {
   const res = await fetch(`/api/events/attending/${userID}/${numOfEvents}`);
-  console.log('IN EVENTS API (getAttendingEvents):', res)
   return res.json();
 }
 
 export async function getEvent(eventID) {
   const res = await fetch(`/api/events/${eventID}`);
-  console.log('IN EVENTS API (getEvent):', res)
   return res.json();
 }
 
@@ -34,7 +29,6 @@ export async function createEvent(formData) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(formData)
   });
-  console.log('IN EVENTS API (createEvent):', res)
   return res.json();
 }
 
@@ -44,13 +38,11 @@ export async function editEvent(eventID, formData) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(formData)
   });
-  console.log('IN EVENTS API (createEvent):', res)
   return res.json();
 }
 
 export async function deleteEvent(eventID) {
   const res = await fetch(`/api/events/${eventID}`, { method: 'DELETE' });
-  console.log('IN EVENTS API (deleteEvent):', res)
   return res.json();
 }
 
@@ -60,7 +52,6 @@ export async function rsvpEvent(eventID, userData) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(userData)
   });
-  console.log('IN EVENTS API (rsvpEvent):', res)
   return res.json();
 }
 
@@ -70,6 +61,5 @@ export async function cancelRsvpEvent(eventID, userData) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(userData)
   });
-  console.log('IN EVENTS API (cancelRsvpEvent):', res)
   return res.json();
 }

@@ -30,7 +30,6 @@ export default function CreateEventPage({ user }) {
     e.preventDefault();
     try {
       const createdEvent = await eventsService.createEvent(formData)
-      console.log('EVENT CREATED', createdEvent)
       navigate('/dashboard')
     } catch(error) {
       console.log(error.message)

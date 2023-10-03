@@ -11,7 +11,6 @@ export default function LandingPage({ setUser }) {
     async function getPastEvents(numOfEvents = 0) {
       try {
         const events = await eventsService.getPastEvents(numOfEvents)
-        console.log('IN LANDING PAGE (getPastEvents):', events)
         setPastEvents(events)
       } catch(error) {
         console.log(error.message)

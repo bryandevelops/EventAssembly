@@ -11,7 +11,6 @@ export default function UpcomingEvents({ user, makeRsvp, setMakeRsvp }) {
     async function getUpcomingEvents(userID, numOfEvents = 0) {
       try {
         const upcomingEvents = await eventsService.getUpcomingEvents(userID, numOfEvents);
-        console.log('IN DASHBOARD PAGE (getUpcomingEvents):', upcomingEvents)
         setUpcomingEvents(upcomingEvents)
       } catch(error) {
         console.log(error.message)

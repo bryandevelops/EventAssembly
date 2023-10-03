@@ -18,7 +18,6 @@ export default function UpcomingEventsListItem({ setDeletedEvent, setRsvp, user,
   async function handleDelete() {
     try {
       const deletedEvent = await eventsService.deleteEvent(_id);
-      console.log('IN EVENT SHOW PAGE (deleteEvent):', deletedEvent)
       setDeletedEvent(true)
     } catch(error) {
       console.log(error.message)
@@ -28,7 +27,6 @@ export default function UpcomingEventsListItem({ setDeletedEvent, setRsvp, user,
   async function handleRSVP() {
     try {
       const rsvpEvent = await eventsService.rsvpEvent(_id, { user })
-      console.log('IN EVENT SHOW PAGE (rsvpEvent):', rsvpEvent)
       setRsvp(true)
     } catch(error) {
       console.log(error.message)
@@ -38,7 +36,6 @@ export default function UpcomingEventsListItem({ setDeletedEvent, setRsvp, user,
   async function handleCancelRSVP() {
     try {
       const cancelRsvpEvent = await eventsService.cancelRsvpEvent(_id, { user })
-      console.log('IN EVENT SHOW PAGE (cancelRsvpEvent):', cancelRsvpEvent)
       setRsvp(true)
     } catch(error) {
       console.log(error.message)
