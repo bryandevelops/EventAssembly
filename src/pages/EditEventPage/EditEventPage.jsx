@@ -40,7 +40,7 @@ export default function EditEventPage(props) {
     }
   }
 
-  async function handleClick() {
+  async function handleDelete() {
     try {
       const deletedEvent = await eventsService.deleteEvent(eventID);
       console.log('IN EDIT EVENT PAGE (deleteEvent):', deletedEvent)
@@ -56,7 +56,7 @@ export default function EditEventPage(props) {
         <div className={styles.linksContainer}>
           <Link to={`/events/${eventID}`} className={styles.editEventBack}>Back</Link>
           <span className={styles.editEventSpan}>|</span>
-          <Link to={'/dashboard'} onClick={handleClick} className={styles.editEventDelete}>Delete</Link>
+          <Link to={'/dashboard'} onClick={handleDelete} className={styles.editEventDelete}>Delete</Link>
         </div>
       </div>
       <p className={styles.editEventMessage}>Edit the details of this event.</p>

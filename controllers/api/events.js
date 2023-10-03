@@ -119,3 +119,35 @@ export async function deleteEvent(req, res) {
     res.status(400).json({ message: error.message })
   }
 }
+
+// Add the logged in user to an event documents attendees array
+export async function rsvpEvent(req, res) {
+  const { eventID } = req.params;
+  console.log(req.body)
+  try {
+    const rsvpEvent = await Event.findByIdAndUpdate(eventID,
+      { $push: { attendees: req.body.user } },
+      { new: true }
+    ).populate('createdBy').populate('attendees');
+    return res.json(rsvpEvent);
+  } catch(error) {
+    console.log(error.message)
+    res.status(400).json({ message: error.message })
+  }
+}
+
+// Remove the logged in user from an event documents attendees array
+export async function cancelRsvpEvent(req, res) {
+  const {eventID } = req.params;
+
+  try {
+    const cancelRsvpEvent = await Event.findByIdAndUpdate(eventID,
+      { $pull: { attendees: req.body.user._id } },
+      { new: true }
+    ).populate('createdBy').populate('attendees');
+    return res.json(cancelRsvpEvent);
+  } catch(error) {
+    console.log(error.message)
+    res.status(400).json({ message: error.message })
+  }
+}

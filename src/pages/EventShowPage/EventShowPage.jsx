@@ -6,6 +6,7 @@ import styles from './EventShowPage.module.css';
 
 export default function EventShowPage({ user }) {
   const [showModal, setShowModal] = useState(false)
+  const [userIsAttendee, setUserIsAttendee] = useState(null);
   const [event, setEvent] = useState(null);
   const { eventID } = useParams();
 
@@ -22,10 +23,45 @@ export default function EventShowPage({ user }) {
     getEvent(eventID)
   }, [])
 
-  async function handleClick() {
+  useEffect(() => {
+    async function isAnAttendee(userID) {
+      for await(const attendee of event.attendees) {
+        if (attendee._id === userID) {
+          setUserIsAttendee(true)
+          break;
+        } else {
+          setUserIsAttendee(false)
+        } 
+      }
+      if (event.attendees.length === 0) setUserIsAttendee(false)
+    }
+    if (event) isAnAttendee(user._id);
+  }, [event])
+
+  async function handleDelete() {
     try {
       const deletedEvent = await eventsService.deleteEvent(eventID);
       console.log('IN EVENT SHOW PAGE (deleteEvent):', deletedEvent)
+    } catch(error) {
+      console.log(error.message)
+    }
+  }
+
+  async function handleRSVP() {
+    try {
+      const rsvpEvent = await eventsService.rsvpEvent(eventID, { user })
+      console.log('IN EVENT SHOW PAGE (rsvpEvent):', rsvpEvent)
+      setEvent(rsvpEvent)
+    } catch(error) {
+      console.log(error.message)
+    }
+  }
+
+  async function handleCancelRSVP() {
+    try {
+      const cancelRsvpEvent = await eventsService.cancelRsvpEvent(eventID, { user })
+      console.log('IN EVENT SHOW PAGE (cancelRsvpEvent):', cancelRsvpEvent)
+      setEvent(cancelRsvpEvent)
     } catch(error) {
       console.log(error.message)
     }
@@ -43,10 +79,16 @@ export default function EventShowPage({ user }) {
                   <div className={styles.linksContainer}>
                     <Link to={`/events/${eventID}/edit-event`} state={event} className={styles.eventShowEdit}>Edit</Link>
                     <span className={styles.eventShowSpan}>|</span>
-                    <Link to={'/dashboard'} onClick={handleClick} className={styles.eventShowDelete}>Delete</Link>
+                    <Link to={'/dashboard'} onClick={handleDelete} className={styles.eventShowDelete}>Delete</Link>
+                  </div>
+                ) : userIsAttendee ? (
+                  <div className={styles.linksContainer}>
+                    <Link onClick={handleCancelRSVP} className={styles.eventShowDelete}>Cancel RSVP</Link>
                   </div>
                 ) : (
-                  <></>
+                  <div className={styles.linksContainer}>
+                    <Link onClick={handleRSVP} className={styles.eventShowDelete}>RSVP</Link>
+                  </div>
                 )
               }
             </div>

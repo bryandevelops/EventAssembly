@@ -47,3 +47,15 @@ export async function deleteEvent(eventID) {
   console.log('IN EVENTS SERVICE (deleteEvent):', deletedEvent)
   return deletedEvent;
 }
+
+export async function rsvpEvent(eventID, userData) {
+  const rsvpEvent = await eventsAPI.rsvpEvent(eventID, userData);
+  console.log('IN EVENTS SERVICE (rsvpEvent):', rsvpEvent)
+  return rsvpEvent;
+}
+
+export async function cancelRsvpEvent(eventID, userData) {
+  const cancelRsvpEvent = await eventsAPI.cancelRsvpEvent(eventID, userData);
+  console.log('IN EVENTS SERVICE (cancelRsvpEvent):', cancelRsvpEvent)
+  return cancelRsvpEvent;
+}

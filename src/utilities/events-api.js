@@ -53,3 +53,23 @@ export async function deleteEvent(eventID) {
   console.log('IN EVENTS API (deleteEvent):', res)
   return res.json();
 }
+
+export async function rsvpEvent(eventID, userData) {
+  const res = await fetch(`/api/events/rsvp/${eventID}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(userData)
+  });
+  console.log('IN EVENTS API (rsvpEvent):', res)
+  return res.json();
+}
+
+export async function cancelRsvpEvent(eventID, userData) {
+  const res = await fetch(`/api/events/cancel-rsvp/${eventID}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(userData)
+  });
+  console.log('IN EVENTS API (cancelRsvpEvent):', res)
+  return res.json();
+}

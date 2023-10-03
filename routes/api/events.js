@@ -11,5 +11,6 @@ router.get('/:eventID', eventsController.getEvent)
 router.post('/new', eventsController.createEvent)
 router.put('/:eventID', eventsController.editEvent)
 router.delete('/:eventID', eventsController.deleteEvent)
-
+router.put('/rsvp/:eventID', eventsController.rsvpEvent)
+router.put('/cancel-rsvp/:eventID', eventsController.cancelRsvpEvent)
 export default router;
