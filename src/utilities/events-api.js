@@ -22,6 +22,12 @@ export async function getAttendingEvents(userID, numOfEvents) {
   return res.json();
 }
 
+export async function getEvent(eventID) {
+  const res = await fetch(`/api/events/${eventID}`);
+  console.log('IN EVENTS API (getEvent):', res)
+  return res.json();
+}
+
 export async function createEvent(formData) {
   const res = await fetch('/api/events/new', {
     method: 'POST',

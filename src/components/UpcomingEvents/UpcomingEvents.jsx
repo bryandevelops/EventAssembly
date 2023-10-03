@@ -5,7 +5,6 @@ import styles from './UpcomingEvents.module.css';
 
 export default function UpcomingEvents({ user }) {
   const [upcomingEvents, setUpcomingEvents] = useState([]);
-  let currentDate;
 
   useEffect(() => {
     async function getUpcomingEvents(userID, numOfEvents = 0) {
@@ -13,8 +12,6 @@ export default function UpcomingEvents({ user }) {
         const upcomingEvents = await eventsService.getUpcomingEvents(userID, numOfEvents);
         console.log('IN DASHBOARD PAGE (getUpcomingEvents):', upcomingEvents)
         setUpcomingEvents(upcomingEvents)
-        
-        currentDate = new Date(upcomingEvents[0].toDateString())
       } catch(error) {
         console.log(error.message)
       }

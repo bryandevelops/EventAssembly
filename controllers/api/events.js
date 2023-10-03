@@ -68,6 +68,19 @@ export async function getAttendingEvents(req, res) {
   }
 }
 
+// Query for an event by ID
+export async function getEvent(req, res) {
+  const { eventID } = req.params;
+
+  try {
+    const event = await Event.findById(eventID).populate('createdBy').populate('attendees');
+    return res.json(event)
+  } catch(error) {
+    console.log(error.message)
+    return res.status(400).json({ message: error.message })
+  }
+}
+
 // Create a new Event document
 export async function createEvent(req, res) {
   try {
