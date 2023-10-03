@@ -9,77 +9,62 @@ import { Event } from '../models/eventModel.js';
   {
     name: "Barry Dare",
     email: "barry.dare@gmail.com",
-    password: "password"
   },
   {
     name: "Greta Franecki",
     email: "greta.franecki@gmail.com",
-    password: "password"
   },
   {
     name: "Bertha Rath",
     email: "bertha.rath@gmail.com",
-    password: "password"
   },
   {
     name: "Tyreek DuBuque",
     email: "tyreek.dubuque@gmail.com",
-    password: "password"
   },
   {
     name: "Christophe Stanton",
     email: "christophe.stanton@gmail.com",
-    password: "password"
   },
   {
     name: "Hattie Graham",
     email: "hattie.graham@gmail.com",
-    password: "password"
   },
   {
     name: "Adrienne Reinger",
     email: "adrienne.reinger@gmail.com",
-    password: "password"
   },
   {
     name: "Sonia Watsica",
     email: "sonia.watsica@gmail.com",
-    password: "password"
   },
   {
     name: "Allan Jones",
     email: "allan.jones@gmail.com",
-    password: "password"
   },
   {
     name: "Reece Greenfelder",
     email: "reece.greenfelder@gmail.com",
-    password: "password"
   },
   {
     name: "Ricardo Stokes",
     email: "ricardo.stokes@gmail.com",
-    password: "password"
   },
   {
     name: "Kelsi Kub",
     email: "kelsi.kub@gmail.com",
-    password: "password"
   },
   {
     name: "Lydia Beier",
     email: "lydia.beier@gmail.com",
-    password: "password"
   },
   {
     name: "Javon Blanda",
     email: "javon.blanda@gmail.com",
-    password: "password"
   },
   {
     name: "Alfonso Daniel",
     email: "alfonso.daniel@gmail.com",
-    password: "password"
   },
 ]
 */
