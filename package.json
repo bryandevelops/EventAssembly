@@ -9,7 +9,9 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "nodemon": "nodemon server.js --ext '*'",
-    "seed": "node config/databaseSeed.js"
+    "seed": "node config/databaseSeed.js",
+    "prod-build": "npm i && npm run build",
+    "prod-start": "node server.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
