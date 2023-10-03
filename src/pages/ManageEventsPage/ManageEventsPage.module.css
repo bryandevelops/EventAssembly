@@ -1,10 +1,9 @@
-.upcomingEventsComponent {
+.manageEventsPage {
   background-color: #fafdff;
   padding: 28px 0 50px 0;
-  min-height: 370px;
 }
 
-.upcomingEventsComponent > h1 {
+.manageEventsPage>h1 {
   margin-left: 50px;
   /* padding-top: 25px; */
   font-family: "DM Serif Display", serif;
@@ -12,19 +11,19 @@
   margin-bottom: 15px;
 }
 
-.upcomingEventsComponent > p {
+.manageEventsPage>p {
   margin: 0 50px 15px;
   font-family: sans-serif;
   font-weight: 400;
 }
 
-.upcomingEventsUl {
+.manageEventsUl {
   list-style: none;
   padding: 0;
   margin: 0 50px;
 }
 
-.upcomingEventsUl > h1 {
+.manageEventsUl>h1 {
   color: black;
   padding-top: 15px;
   font-size: x-large;

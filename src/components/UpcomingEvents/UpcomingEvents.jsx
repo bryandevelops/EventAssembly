@@ -3,8 +3,9 @@ import * as eventsService from '../../utilities/events-service.js';
 import UpcomingEventsListItem from '../UpcomingEventsListItem/UpcomingEventsListItem.jsx';
 import styles from './UpcomingEvents.module.css';
 
-export default function UpcomingEvents({ user }) {
+export default function UpcomingEvents({ user, makeRsvp, setMakeRsvp }) {
   const [upcomingEvents, setUpcomingEvents] = useState([]);
+  
 
   useEffect(() => {
     async function getUpcomingEvents(userID, numOfEvents = 0) {
@@ -17,7 +18,7 @@ export default function UpcomingEvents({ user }) {
       }
     }
     getUpcomingEvents(user._id, 0)
-  }, [])
+  }, [makeRsvp])
 
   return (
     <section className={styles.upcomingEventsComponent}>
@@ -47,7 +48,7 @@ export default function UpcomingEvents({ user }) {
                     <></>
                   )
                 }
-                <UpcomingEventsListItem key={event._id} {...event} />
+                <UpcomingEventsListItem key={event._id} user={user} setRsvp={setMakeRsvp} {...event} />
               </Fragment>
             );
           })

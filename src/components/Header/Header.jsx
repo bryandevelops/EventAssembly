@@ -19,7 +19,8 @@ export default function Header({ user, setUser }) {
           user ? (
             <div className={styles.linksContainer}>
               <Link to='/dashboard' className={location.pathname === '/dashboard' ? `${styles.headerLinks} ${styles.selectedLink}` : `${styles.headerLinks}`}>Dashboard</Link>|
-              <Link to='/dashboard/create-event' className={location.pathname === '/dashboard/create-event' ? `${styles.headerLinks} ${styles.selectedLink}` : `${styles.headerLinks}`}>Create</Link>
+              <Link to='/manage-events' className={location.pathname === '/manage-events' ? `${styles.headerLinks} ${styles.selectedLink}` : `${styles.headerLinks}`}>Manage</Link>|
+              <Link to='/create-event' className={location.pathname === '/create-event' ? `${styles.headerLinks} ${styles.selectedLink}` : `${styles.headerLinks}`}>Create</Link>
             </div>
           ) : (
             <></>

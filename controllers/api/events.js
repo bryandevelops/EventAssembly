@@ -42,7 +42,7 @@ export async function getHostingEvents(req, res) {
     const hostingEvents = await Event.find({
       createdBy: userID, 
       date: { $gte: new Date() }
-    }).limit(numOfEvents).sort({ date: 'asc' });
+    }).limit(numOfEvents).sort({ date: 'asc' }).populate('createdBy');
 
     return res.json(hostingEvents);
   } catch(error) {
@@ -59,7 +59,7 @@ export async function getAttendingEvents(req, res) {
     const attendingEvents = await Event.find({
       attendees: userID,
       date: { $gte: new Date() }
-    }).limit(numOfEvents).sort({ date: 'asc' });
+    }).limit(numOfEvents).sort({ date: 'asc' }).populate('createdBy');
 
     return res.json(attendingEvents);
   } catch(error) {

@@ -4,7 +4,7 @@ import * as eventsService from '../../utilities/events-service.js';
 import NextEventsListItem from '../../components/NextEventsListItem/NextEventsListItem.jsx';
 import styles from './NextEvents.module.css';
 
-export default function NextEvents({ user }) {
+export default function NextEvents({ user, makeRsvp }) {
   const [userNextEvents, setUserNextEvents] = useState([]);
 
   function sortAscending(a, b) {
@@ -30,17 +30,17 @@ export default function NextEvents({ user }) {
       }
     }
     getUserNextEvents(user._id, 4)
-  }, [])
+  }, [makeRsvp])
 
   return (
     <aside className={styles.userEventsComponent}>
       <div className={styles.userEventsContainer}>
         <div className={styles.yourNextEventsDiv}>
           <h3>Your next events</h3>
-          <Link to=''>View all</Link>
+          <Link to='/manage-events'>View all</Link>
         </div>
         <p className={styles.userEventsMessage}>
-          Here is a preview of upcoming events that you're hosting and/or attending.
+          Here is a preview of upcoming events that you're hosting and/or attending. You'll see up to four of each so you're up to date with what's coming.
         </p>
         {
           userNextEvents.length !== 0 ? (
