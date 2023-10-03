@@ -8,7 +8,6 @@ export default function Header({ user, setUser }) {
 
   function handleClick(e) {
     e.preventDefault()
-    console.log(location.pathname)
     user ? navigate('/dashboard') : navigate('/')
   }
 

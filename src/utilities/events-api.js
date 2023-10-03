@@ -47,3 +47,9 @@ export async function editEvent(eventID, formData) {
   console.log('IN EVENTS API (createEvent):', res)
   return res.json();
 }
+
+export async function deleteEvent(eventID) {
+  const res = await fetch(`/api/events/${eventID}`, { method: 'DELETE' });
+  console.log('IN EVENTS API (deleteEvent):', res)
+  return res.json();
+}

@@ -10,5 +10,6 @@ router.get('/attending/:userID/:numOfEvents', eventsController.getAttendingEvent
 router.get('/:eventID', eventsController.getEvent)
 router.post('/new', eventsController.createEvent)
 router.put('/:eventID', eventsController.editEvent)
+router.delete('/:eventID', eventsController.deleteEvent)
 
 export default router;

@@ -94,13 +94,26 @@ export async function createEvent(req, res) {
   }
 }
 
-// Edit an existing event document
+// Edit an existing event document found by ID
 export async function editEvent(req, res) {
   const { eventID } = req.params;
 
   try {
     const editedEvent = await Event.findByIdAndUpdate(eventID, req.body, {new: true})
     return res.json(editedEvent)
+  } catch(error) {
+    console.log(error.message)
+    res.status(400).json({ message: error.message })
+  }
+}
+
+// Delete an existing event document found by ID
+export async function deleteEvent(req, res) {
+  const { eventID } = req.params;
+
+  try {
+    const deletedEvent = await Event.findByIdAndDelete(eventID)
+    return res.json(deletedEvent)
   } catch(error) {
     console.log(error.message)
     res.status(400).json({ message: error.message })

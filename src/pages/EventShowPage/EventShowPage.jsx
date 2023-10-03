@@ -21,6 +21,15 @@ export default function EventShowPage({ user }) {
     }
     getEvent(eventID)
   }, [])
+
+  async function handleClick() {
+    try {
+      const deletedEvent = await eventsService.deleteEvent(eventID);
+      console.log('IN EVENT SHOW PAGE (deleteEvent):', deletedEvent)
+    } catch(error) {
+      console.log(error.message)
+    }
+  }
   
   return (
     <main className={styles.eventShowPage}>
@@ -34,7 +43,7 @@ export default function EventShowPage({ user }) {
                   <div className={styles.linksContainer}>
                     <Link to={`/events/${eventID}/edit-event`} state={event} className={styles.eventShowEdit}>Edit</Link>
                     <span className={styles.eventShowSpan}>|</span>
-                    <Link className={styles.eventShowDelete}>Delete</Link>
+                    <Link to={'/dashboard'} onClick={handleClick} className={styles.eventShowDelete}>Delete</Link>
                   </div>
                 ) : (
                   <></>

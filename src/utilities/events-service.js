@@ -41,3 +41,9 @@ export async function editEvent(eventID, formData) {
   console.log('IN EVENTS SERVICE (editEvent):', editedEvent)
   return editedEvent;
 }
+
+export async function deleteEvent(eventID) {
+  const deletedEvent = await eventsAPI.deleteEvent(eventID);
+  console.log('IN EVENTS SERVICE (deleteEvent):', deletedEvent)
+  return deletedEvent;
+}
