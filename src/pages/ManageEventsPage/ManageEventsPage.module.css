@@ -32,3 +32,22 @@
   font-family: sans-serif;
   font-weight: 400;
 }
+
+.noUserEventsMessage {
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 15px;
+  color: #fe7162;
+  text-shadow: 1px 1px 1px #94959c;
+  letter-spacing: 1px;
+  margin-top: 5px;
+  font-family: sans-serif;
+  font-weight: 500;
+}
+
+.svg {
+  display: flex;
+  margin: 0 auto;
+  width: 15%;
+  height: fit-content;
+}
