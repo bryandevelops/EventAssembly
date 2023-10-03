@@ -81,13 +81,26 @@ export async function getEvent(req, res) {
   }
 }
 
-// Create a new Event document
+// Create a new event document
 export async function createEvent(req, res) {
   try {
     await Event.create(req.body)
     .then(createdEvent => {
       return res.status(201).json({ message: 'Event Created'})
     })
+  } catch(error) {
+    console.log(error.message)
+    res.status(400).json({ message: error.message })
+  }
+}
+
+// Edit an existing event document
+export async function editEvent(req, res) {
+  const { eventID } = req.params;
+
+  try {
+    const editedEvent = await Event.findByIdAndUpdate(eventID, req.body, {new: true})
+    return res.json(editedEvent)
   } catch(error) {
     console.log(error.message)
     res.status(400).json({ message: error.message })

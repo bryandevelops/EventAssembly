@@ -5,6 +5,7 @@ import LandingPage from './pages/LandingPage/LandingPage.jsx';
 import DashboardPage from './pages/DashboardPage/DashboardPage.jsx';
 import CreateEventPage from './pages/CreateEventPage/CreateEventPage.jsx';
 import EventShowPage from './pages/EventShowPage/EventShowPage.jsx';
+import EditEventPage from './pages/EditEventPage/EditEventPage.jsx';
 import Header from './components/Header/Header.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import './App.css';
@@ -22,6 +23,7 @@ export default function App() {
               <Route path='/dashboard' element={<DashboardPage user={user} />} />
               <Route path='/dashboard/create-event' element={<CreateEventPage user={user} />} />
               <Route path='/events/:eventID' element={<EventShowPage user={user} />} />
+              <Route path='/events/:eventID/edit-event' element={<EditEventPage user={user} />} />
               <Route path='*' element={<Navigate to='/dashboard' replace />} />
             </Routes>
             <Footer />

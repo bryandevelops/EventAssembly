@@ -9,5 +9,6 @@ router.get('/hosting/:userID/:numOfEvents', eventsController.getHostingEvents)
 router.get('/attending/:userID/:numOfEvents', eventsController.getAttendingEvents)
 router.get('/:eventID', eventsController.getEvent)
 router.post('/new', eventsController.createEvent)
+router.put('/:eventID', eventsController.editEvent)
 
 export default router;

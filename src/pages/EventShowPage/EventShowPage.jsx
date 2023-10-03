@@ -29,11 +29,17 @@ export default function EventShowPage({ user }) {
           <>
             <div className={styles.eventShowContainer}>
               <h3 className={styles.eventShowHost}><span>Hosted by</span> {event.createdBy.name}</h3>
-              <div className={styles.linksContainer}>
-                <Link className={styles.eventShowEdit}>Edit</Link>
-                <span className={styles.eventShowSpan}>|</span>
-                <Link className={styles.eventShowDelete}>Delete</Link>
-              </div>
+              {
+                user._id === event.createdBy._id ? (
+                  <div className={styles.linksContainer}>
+                    <Link to={`/events/${eventID}/edit-event`} state={event} className={styles.eventShowEdit}>Edit</Link>
+                    <span className={styles.eventShowSpan}>|</span>
+                    <Link className={styles.eventShowDelete}>Delete</Link>
+                  </div>
+                ) : (
+                  <></>
+                )
+              }
             </div>
             <h1 className={styles.eventShowTitle}>{event.title}</h1>
             <div className={styles.detailsContainer}>
@@ -42,7 +48,7 @@ export default function EventShowPage({ user }) {
               <h4 className={styles.eventShowLocation} onClick={() => setShowModal(!showModal)}>{event.location}&nbsp;&bull;&nbsp;<span>{event.attendees.length} attendee{event.attendees.length === 1 ? '' : 's'}</span></h4>
               {showModal ? <Modal showModal={showModal} setShowModal={setShowModal} attendees={event.attendees} /> : ''}
             </div>
-            <p className={styles.eventShowDescription}>{event.description}</p>
+            {event.description ? <p className={styles.eventShowDescription}>{event.description}</p> : <p className={styles.eventShowDescription}>No description.</p>}
           </>
         ) : (
           <h1>Loading</h1>

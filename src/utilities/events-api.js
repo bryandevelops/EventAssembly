@@ -37,3 +37,13 @@ export async function createEvent(formData) {
   console.log('IN EVENTS API (createEvent):', res)
   return res.json();
 }
+
+export async function editEvent(eventID, formData) {
+  const res = await fetch(`/api/events/${eventID}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(formData)
+  });
+  console.log('IN EVENTS API (createEvent):', res)
+  return res.json();
+}

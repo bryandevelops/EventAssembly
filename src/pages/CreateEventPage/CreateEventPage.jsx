@@ -36,6 +36,7 @@ export default function CreateEventPage({ user }) {
       console.log(error.message)
     }
   }
+  
   return (
     <main className={styles.createEventPage}>
       <h1 className={styles.createEventHeading}>Create event</h1>

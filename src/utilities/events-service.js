@@ -35,3 +35,9 @@ export async function createEvent(formData) {
   console.log('IN EVENTS SERVICE (createEvent):', createdEvent)
   return createdEvent;
 }
+
+export async function editEvent(eventID, formData) {
+  const editedEvent = await eventsAPI.editEvent(eventID, formData);
+  console.log('IN EVENTS SERVICE (editEvent):', editedEvent)
+  return editedEvent;
+}
