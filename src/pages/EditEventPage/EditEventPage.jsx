@@ -3,7 +3,7 @@ import { useNavigate, useLocation, useParams, Link } from 'react-router-dom';
 import * as eventsService from '../../utilities/events-service.js';
 import styles from './EditEventPage.module.css';
 
-export default function EditEventPage({ user }) {
+export default function EditEventPage(props) {
   const navigate = useNavigate();
   const location = useLocation();
   const { eventID } = useParams();

@@ -23,7 +23,7 @@ export default function App() {
               <Route path='/dashboard' element={<DashboardPage user={user} />} />
               <Route path='/dashboard/create-event' element={<CreateEventPage user={user} />} />
               <Route path='/events/:eventID' element={<EventShowPage user={user} />} />
-              <Route path='/events/:eventID/edit-event' element={<EditEventPage user={user} />} />
+              <Route path='/events/:eventID/edit-event' element={<EditEventPage />} />
               <Route path='*' element={<Navigate to='/dashboard' replace />} />
             </Routes>
             <Footer />
